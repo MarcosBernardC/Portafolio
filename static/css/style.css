@@ -50,4 +50,48 @@
 
 .fieldset_habilidades{
     border-radius: 10px;
+
+    transition: box-shadow 0.3s ease-out, color 0.5s ease-in-out;
+}
+
+.fieldset_habilidades:hover {
+    border-color: rgb(145, 184, 202);
+    box-shadow: 0 0 10px rgba(100, 123, 134, 0.7); /* Brillo suave */
+}
+
+.legend_habilidades{
+    background-color:white;
+    color: rgb(30, 114, 153);
+    padding-left:20px;
+    font-size: 110%;
+    border-radius: 10px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    transition: box-shadow 0.4s ease-in-out, 0.4s ease-in-out, padding-right 0.4s ease-in-out;
+}
+
+.fieldset_habilidades:hover .legend_habilidades{
+    padding-right: 5%;
+    padding-left: 10%;
+    box-shadow: 0 0 10px rgba(100, 123, 134, 0.7);
+    
+}
+
+.fieldset_habilidades li{
+    padding-bottom: 10px;
+}
+
+.fa-brands {
+    margin-left: 8px; /* Espacio entre el texto y el icono */
+    font-size: 18px;  /* Tamaño del icono */
+}
+.fa-git-alt { color: #F1502F; }  /* Rojo de Git */
+.fa-html5 { color: #E34F26; }    /* Naranja de HTML */
+.fa-js { color: #e4d145;}       /* Amarillo de JS */
+.fa-css3-alt { color: #1572B6; } /* Azul de CSS */
+
+.icon{
+    margin-left: 8px;
+    height: 20px;
+    vertical-align: middle; /* Añade esta línea */
 }
