@@ -1,0 +1,53 @@
+/* style.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+#nav-container{
+    background-color: rgb(63, 63, 63);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left:0;
+    padding-top: 1%;
+    height: 2.5em;
+}
+#nav-container a{
+    display: inline-block; /* Hace que el enlace sea una caja */
+    width: 9em; /* Ancho fijo */
+    line-height: 40px; /* Centra el texto verticalmente */
+    text-align: center; /* Centra el texto horizontalmente */
+    color:white;
+    border-radius: 7px;
+    text-decoration: none;
+    font-family: 'Roboto';
+
+    transition: background-color 0.5s ease-in-out, transform 0.5s ease-in-out, color 0.2s ease-out;
+}
+
+#nav-container a:hover{
+    transform: scale(1.07) translateY(-10px);
+    background-color:rgb(233, 198, 82);
+    color:rgb(66, 66, 66)
+}
+.contenido{
+    padding:20px;
+    width: 37em;
+    font-family: 'Roboto';
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.contenedor_general{
+    padding-top: 4em;
+    display: flex;
+    justify-content: center;
+}
+
+
+.contenido_general.mostrar {
+    opacity: 1;
+    transform: translateY(0); /* Se mueve a su posición normal */
+}
+
+.fieldset_habilidades{
+    border-radius: 10px;
+}
