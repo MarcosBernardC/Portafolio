@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagen con degradado en bordes - Estilo MS Word</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        
+        .container {
+            position: relative;
+            max-width: 800px;
+            width: 100%;
+            margin: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-top: 0;
+        }
+        
+        .image-container {
+            position: relative;
+            margin: 20px auto;
+            max-width: 600px;
+            border: 1px solid #ddd;
+        }
+        
+        .image-wrapper {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        
+        .fade-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        
+        /* Horizontal edges (top and bottom) */
+        .fade-top, .fade-bottom {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background: linear-gradient(to bottom, white, transparent);
+        }
+        
+        .fade-top {
+            top: 0;
+        }
+        
+        .fade-bottom {
+            bottom: 0;
+            transform: rotate(180deg);
+        }
+        
+        /* Vertical edges (left and right) */
+        .fade-left, .fade-right {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 0;
+            background: linear-gradient(to right, white, transparent);
+        }
+        
+        .fade-left {
+            left: 0;
+        }
+        
+        .fade-right {
+            right: 0;
+            transform: rotate(180deg);
+        }
+        
+        .controls {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .control-header {
+            font-weight: bold;
+            color: #444;
+            margin-bottom: 5px;
+        }
+        
+        .slider-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        label {
+            min-width: 120px;
+        }
+        
+        input[type="range"] {
+            flex-grow: 1;
+        }
+        
+        .value-display {
+            min-width: 50px;
+            text-align: right;
+        }
+        
+        button {
+            padding: 10px 16px;
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        
+        button:hover {
+            background-color: #357abd;
+        }
+        
+        .options {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Efecto de Degradado en Bordes</h2>
+        
+        <div class="image-container">
+            <div class="image-wrapper">
+                <img src="https://i.postimg.cc/VLBLh10p/electronics6.jpg" alt="Imagen con efecto de degradado en los bordes">
+                <div class="fade-overlay">
+                    <div class="fade-top"></div>
+                    <div class="fade-bottom"></div>
+                    <div class="fade-left"></div>
+                    <div class="fade-right"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <div class="control-group">
+                <div class="control-header">Degradado Vertical</div>
+                <div class="slider-container">
+                    <label for="top-fade">Borde Superior (%):</label>
+                    <input type="range" id="top-fade" min="0" max="50" value="0">
+                    <span class="value-display" id="top-fade-value">0</span>
+                </div>
+                
+                <div class="slider-container">
+                    <label for="bottom-fade">Borde Inferior (%):</label>
+                    <input type="range" id="bottom-fade" min="0" max="50" value="0">
+                    <span class="value-display" id="bottom-fade-value">0</span>
+                </div>
+            </div>
+            
+            <div class="control-group">
+                <div class="control-header">Degradado Horizontal</div>
+                <div class="slider-container">
+                    <label for="left-fade">Borde Izquierdo (%):</label>
+                    <input type="range" id="left-fade" min="0" max="50" value="0">
+                    <span class="value-display" id="left-fade-value">0</span>
+                </div>
+                
+                <div class="slider-container">
+                    <label for="right-fade">Borde Derecho (%):</label>
+                    <input type="range" id="right-fade" min="0" max="50" value="0">
+                    <span class="value-display" id="right-fade-value">0</span>
+                </div>
+            </div>
+            
+            <div class="options">
+                <button id="reset-button">Restablecer todo</button>
+                <button id="equal-button">Aplicar mismo valor a todos los bordes</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Obtener referencias a los elementos
+        const topFadeSlider = document.getElementById('top-fade');
+        const bottomFadeSlider = document.getElementById('bottom-fade');
+        const leftFadeSlider = document.getElementById('left-fade');
+        const rightFadeSlider = document.getElementById('right-fade');
+        
+        const topFadeValue = document.getElementById('top-fade-value');
+        const bottomFadeValue = document.getElementById('bottom-fade-value');
+        const leftFadeValue = document.getElementById('left-fade-value');
+        const rightFadeValue = document.getElementById('right-fade-value');
+        
+        const resetButton = document.getElementById('reset-button');
+        const equalButton = document.getElementById('equal-button');
+        
+        const fadeTop = document.querySelector('.fade-top');
+        const fadeBottom = document.querySelector('.fade-bottom');
+        const fadeLeft = document.querySelector('.fade-left');
+        const fadeRight = document.querySelector('.fade-right');
+        
+        // Función para actualizar los efectos de degradado
+        function updateFadeEffects() {
+            const topValue = topFadeSlider.value;
+            const bottomValue = bottomFadeSlider.value;
+            const leftValue = leftFadeSlider.value;
+            const rightValue = rightFadeSlider.value;
+            
+            // Actualizar valores mostrados
+            topFadeValue.textContent = topValue;
+            bottomFadeValue.textContent = bottomValue;
+            leftFadeValue.textContent = leftValue;
+            rightFadeValue.textContent = rightValue;
+            
+            // Aplicar efectos a los elementos
+            fadeTop.style.height = `${topValue}%`;
+            fadeBottom.style.height = `${bottomValue}%`;
+            fadeLeft.style.width = `${leftValue}%`;
+            fadeRight.style.width = `${rightValue}%`;
+        }
+        
+        // Evento para cuando se mueven los sliders
+        topFadeSlider.addEventListener('input', updateFadeEffects);
+        bottomFadeSlider.addEventListener('input', updateFadeEffects);
+        leftFadeSlider.addEventListener('input', updateFadeEffects);
+        rightFadeSlider.addEventListener('input', updateFadeEffects);
+        
+        // Botón para restablecer todos los valores
+        resetButton.addEventListener('click', () => {
+            topFadeSlider.value = 0;
+            bottomFadeSlider.value = 0;
+            leftFadeSlider.value = 0;
+            rightFadeSlider.value = 0;
+            updateFadeEffects();
+        });
+        
+        // Botón para aplicar el mismo valor a todos los bordes
+        equalButton.addEventListener('click', () => {
+            // Calcular el promedio de los valores actuales
+            const values = [
+                parseInt(topFadeSlider.value),
+                parseInt(bottomFadeSlider.value),
+                parseInt(leftFadeSlider.value),
+                parseInt(rightFadeSlider.value)
+            ];
+            
+            // Usar el valor más alto como referencia
+            const maxValue = Math.max(...values);
+            const valueToApply = maxValue > 0 ? maxValue : 20; // Si todos son 0, usar 20 como valor por defecto
+            
+            // Aplicar el valor a todos los sliders
+            topFadeSlider.value = valueToApply;
+            bottomFadeSlider.value = valueToApply;
+            leftFadeSlider.value = valueToApply;
+            rightFadeSlider.value = valueToApply;
+            
+            updateFadeEffects();
+        });
+        
+        // Inicializar
+        updateFadeEffects();
+    </script>
+</body>
+</html>

@@ -1,97 +1,214 @@
-/* style.css */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
-#nav-container{
-    background-color: rgb(63, 63, 63);
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left:0;
-    padding-top: 1%;
-    height: 2.5em;
+/*Estilos generales*/
+body{
+    font-family: sans-serif;
 }
-#nav-container a{
-    display: inline-block; /* Hace que el enlace sea una caja */
-    width: 9em; /* Ancho fijo */
-    line-height: 40px; /* Centra el texto verticalmente */
-    text-align: center; /* Centra el texto horizontalmente */
-    color:white;
-    border-radius: 7px;
-    text-decoration: none;
-    font-family: 'Roboto';
+/*******************/
 
-    transition: background-color 0.5s ease-in-out, transform 0.5s ease-in-out, color 0.2s ease-out;
-}
-
-#nav-container a:hover{
-    transform: scale(1.07) translateY(-10px);
-    background-color:rgb(233, 198, 82);
-    color:rgb(66, 66, 66)
-}
-.contenido{
-    padding:20px;
-    width: 37em;
-    font-family: 'Roboto';
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
-}
-
-.contenedor_general{
-    padding-top: 4em;
+/*menú de navegacion*/
+.menu_principal{
+    background-color: #333;
     display: flex;
+    flex-direction: column;
+    width: 10%;
+    position:fixed;
+    left:0;
+    top:0;
+    height: 100%;
+    padding-top: 37px;
+    border-radius: 2px;
+}
+
+.link_name{
+    position:fixed;
+    top:0;
+    width: 100%;
+    height: 3%;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
     justify-content: center;
+    border: 2px;
 }
 
-
-.contenido_general.mostrar {
-    opacity: 1;
-    transform: translateY(0); /* Se mueve a su posición normal */
+.menu_principal a{
+    text-decoration: none; 
+    font-size: 21.5px;
+    color:white;
+    width:100%;
+    padding: 2.5px;
 }
 
-.fieldset_habilidades{
+.links{
+    display: flex;
+    flex-direction: column;
+    width: 101%;
+    gap:3px;
+    
+}
+.link{
+    display: flex;
+    width: 100%;
     border-radius: 10px;
-
-    transition: box-shadow 0.3s ease-out, color 0.5s ease-in-out;
+    transition: background-color 0.2s ease-out;
 }
-
-.fieldset_habilidades:hover {
-    border-color: rgb(145, 184, 202);
-    box-shadow: 0 0 10px rgba(100, 123, 134, 0.7); /* Brillo suave */
-}
-
-.legend_habilidades{
-    background-color:white;
-    color: rgb(30, 114, 153);
-    padding-left:20px;
-    font-size: 110%;
-    border-radius: 10px;
-    padding-bottom: 2px;
-    padding-top: 2px;
-    transition: box-shadow 0.4s ease-in-out, 0.4s ease-in-out, padding-right 0.4s ease-in-out;
-}
-
-.fieldset_habilidades:hover .legend_habilidades{
-    padding-right: 5%;
-    padding-left: 10%;
-    box-shadow: 0 0 10px rgba(100, 123, 134, 0.7);
+.contenedor_general{
+    display: flexbox;
+    
+    align-items: center;
+    padding-left: 11%;
+    border: 1px solid red;
     
 }
 
-.fieldset_habilidades li{
-    padding-bottom: 10px;
+.color_link{
+    width:2%;
+    background-color: white;
+    border: 2px solid black;
+    transition: width 0.2s ease-in-out, background-color 0.3s ease-out;
 }
 
-.fa-brands {
-    margin-left: 8px; /* Espacio entre el texto y el icono */
-    font-size: 18px;  /* Tamaño del icono */
+.link:hover .color_link{
+    width: 15px;
+    background-color: rgb(209, 30, 30);
+    border:black 1px solid;
 }
-.fa-git-alt { color: #F1502F; }  /* Rojo de Git */
-.fa-html5 { color: #E34F26; }    /* Naranja de HTML */
-.fa-js { color: #e4d145;}       /* Amarillo de JS */
-.fa-css3-alt { color: #1572B6; } /* Azul de CSS */
+.link:hover{
+    background-color: #686868;
+}
 
-.icon{
-    margin-left: 8px;
-    height: 20px;
-    vertical-align: middle; /* Añade esta línea */
+.contenedor_principal{
+    padding-top: 3%;
+    display: flex;
+    border: purple 1px solid;
+
+}
+
+.imagenes_izquierda{
+
+    padding-top: 9%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+    border: greenyellow solid 1px;
+}
+.imagenes_derecha{
+
+    padding-top: 9%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    justify-content: center;
+    align-items: center;
+
+    border: skyblue 1px solid;
+}
+
+.info{
+    padding-top: 2%;
+    display: flex;
+    flex-direction: column;
+    border:#333 solid 1px;
+    align-items: center;
+}
+
+#trabajemos_btn{
+    text-decoration: none;
+    margin:auto;
+    border: #333 1px solid;
+
+    color: black;
+    border-radius: 5px;
+    background-color: rgb(238, 212, 62);
+
+    padding:4px;
+}
+
+.link_name{
+    background-color: rgb(238, 212, 62);
+}
+
+
+
+
+/**********************************/
+
+.image-container {
+    position: relative;
+    margin: 0 auto;
+    max-width: 420px;
+    border: 1px solid #ddd;
+}
+
+.image-wrapper {
+    position: relative;
+    overflow: hidden;
+
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Contenedor de los efectos de degradado */
+.fade-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    
+}
+
+/* Degradados verticales (superior e inferior - 8%) */
+.fade-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8%;
+    background: linear-gradient(to bottom, white, transparent);
+
+}
+
+.fade-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 8%;
+    background: linear-gradient(to top, white, transparent);
+
+}
+
+/* Degradados horizontales (izquierdo y derecho - 7%) */
+.fade-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 7%;
+    background: linear-gradient(to right, white, transparent);
+
+}
+
+.fade-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 7%;
+    background: linear-gradient(to left, white, transparent);
+
+}
+
+#img_profile{
+    width: 280px;
+    border-radius: 8px;
+    border: 0.5px solid #333;
 }

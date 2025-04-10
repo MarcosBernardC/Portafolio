@@ -3,20 +3,103 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8">
-        <meta name="width=device-width, initial-scale=1.0">
-        <title>home</title>
-
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>home: Marcos B. Calixto</title>
+    
         <link rel="stylesheet" href="../static/css/style.css">
     </head>
     <body>
-        <nav id="nav-container">
-            <a href="./home.html">🏠 Inicio</a>
-            <a href="./about_me.html">🧑‍💻 Acerca de mí</a>
-            <a href="./habilities.html">🛠️ Habilidades</a>
-            <a href="./contact.html">📬 Contacto</a>
+        <div class="link_name">Home</div>
+        <!-- nav.html -->
+        <nav class="menu_principal" id="nav-container">
+            
+            <div class="links">
+                <div class="link" id="home_link">
+                    <div class="color_link""></div>
+                    <a href="./home.html">🏠 Inicio</a>
+                </div>
+                <div class="link" id="about_me_link">
+                    <div class="color_link""></div>
+                    <a href="./pages/about_me.html">🧑‍💻 Acerca de</a>
+                </div>
+                <div class="link" id="habilities_link">
+                    <div class="color_link""></div>
+                    <a href="./pages/habilities.html">🛠️ Habilidades</a>
+                </div>
+                <div class="link" id="contact_link">
+                    <div class="color_link""></div>
+                    <a href="./pages/contact.html"> 📨 Contacto</a>
+                </div>
+            </div>
         </nav>
-        <div class="contenedor_home">
-            <div class="contenido_home"><h1>Home</h1></div>
-        </div>
+
+        <div class="contenedor_general">
+            <div class="contenedor_principal">  
+                <div class="imagenes_izquierda" style="flex-grow: 1;">
+
+                    <div class="image-container">
+                        <div class="image-wrapper">
+                            <img src="https://i.postimg.cc/VLBLh10p/electronics6.jpg" alt="Imagen con efecto de degradado en los bordes">
+                            <div class="fade-overlay">
+                                <div class="fade-top"></div>
+                                <div class="fade-bottom"></div>
+                                <div class="fade-left"></div>
+                                <div class="fade-right"></div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="image-container">
+                        <div class="image-wrapper">
+                            <img src="https://i.postimg.cc/8PJLfZct/electronics8.jpg" alt="Imagen con efecto de degradado en los bordes">
+                            <div class="fade-overlay">
+                                <div class="fade-top"></div>
+                                <div class="fade-bottom"></div>
+                                <div class="fade-left"></div>
+                                <div class="fade-right"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="info" style="flex-grow: 2;">
+                    <img src="https://i.postimg.cc/dQh4txtW/Marcos.jpg" alt="home_1" class="img_profile" id="img_profile">
+                    <h1>Marcos Bernard Calixto López</h1>
+                    <h2>Bachiller en Ingeniería Electrónica | Desarrollador Frontend</h2>
+                    <p>Fusiono hardware, software y datos para construir soluciones inteligentes.</p>
+                    <a href="#contacto" class="btn" id="trabajemos_btn">Trabajemos juntos!</a>
+                </div>
+
+
+                <div class="imagenes_derecha" style="flex-grow:1;">
+                    
+                    <div class="image-container">
+                        <div class="image-wrapper">
+                            <img src="https://i.postimg.cc/prghBtrk/electronics9.jpg" alt="Imagen con efecto de degradado en los bordes">
+                            <div class="fade-overlay">
+                                <div class="fade-top"></div>
+                                <div class="fade-bottom"></div>
+                                <div class="fade-left"></div>
+                                <div class="fade-right"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="image-container">
+                        <div class="image-wrapper">
+                            <img src="https://i.postimg.cc/fRsj4xWC/electronics10.jpg" alt="Imagen con efecto de degradado en los bordes">
+                            <div class="fade-overlay">
+                                <div class="fade-top"></div>
+                                <div class="fade-bottom"></div>
+                                <div class="fade-left"></div>
+                                <div class="fade-right"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    
     </body>
 </html>

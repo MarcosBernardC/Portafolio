@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskMaster - Organiza tu vida</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        header {
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 1.5rem;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+        
+        nav a:hover {
+            opacity: 1;
+        }
+        
+        .hero {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .hero-content {
+            max-width: 600px;
+        }
+        
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: #FF6B6B;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .features {
+            display: flex;
+            justify-content: space-between;
+            padding: 4rem 2rem;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            margin-top: 2rem;
+        }
+        
+        .feature {
+            flex: 1;
+            padding: 1.5rem;
+            text-align: center;
+            max-width: 300px;
+            margin: 0 1rem;
+        }
+        
+        .feature h3 {
+            margin: 1rem 0;
+            font-size: 1.5rem;
+        }
+        
+        .feature p {
+            opacity: 0.8;
+            font-size: 1rem;
+        }
+        
+        .feature-icon {
+            background-color: rgba(255, 255, 255, 0.2);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            font-size: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .feature {
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">TaskMaster</a>
+        <nav>
+            <a href="#">Características</a>
+            <a href="#">Precios</a>
+            <a href="#">Blog</a>
+            <a href="#">Contacto</a>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Gestiona tus tareas sin esfuerzo</h1>
+                <p>TaskMaster te ayuda a organizar tu vida diaria, aumentar tu productividad y alcanzar tus metas con nuestra intuitiva aplicación de gestión de tareas.</p>
+                <a href="#" class="cta-button">¡Empieza ahora - Gratis!</a>
+            </div>
+            <div class="hero-image">
+                <img src="/api/placeholder/400/320" alt="TaskMaster App" />
+            </div>
+        </section>
+        
+        <section class="features">
+            <div class="feature">
+                <div class="feature-icon">📋</div>
+                <h3>Organiza tus tareas</h3>
+                <p>Crea listas, establece prioridades y mantén todo organizado en un solo lugar.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">⏰</div>
+                <h3>Recordatorios</h3>
+                <p>Nunca olvides una tarea importante con nuestro sistema de notificaciones.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📊</div>
+                <h3>Seguimiento de progreso</h3>
+                <p>Visualiza tu productividad y celebra tus logros con estadísticas claras.</p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
