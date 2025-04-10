@@ -212,3 +212,82 @@ img {
     border-radius: 8px;
     border: 0.5px solid #333;
 }
+
+/********************************/
+.icon{
+    width: 8%;
+}
+
+.contenedor_habilidades{
+    display: flex;
+    padding-top: 2%;
+    padding-left: 12%;
+
+    border: 1px solid black;
+}
+
+.lista_habilidades{
+    display: flex;
+    flex-direction: column;
+}
+
+.lista_habilidades {
+    font-size:130%;
+
+    border: 2px solid black;
+    display: flex;
+    
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+
+    border-radius: 15px;
+}
+
+.imagenes_habilidades{
+    flex-grow: 1;
+    border: 1px solid black;
+}
+
+/* Estilo para los elementos de lista */
+.fieldset_habilidades ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Estilo para los iconos de FontAwesome */
+.fieldset_habilidades ul li i {
+    margin-left: 10px;
+    font-size: 1.2em;
+}
+
+/* Estilo para las imágenes de clase icon */
+.fieldset_habilidades ul li .icon {
+    margin-left: 10px;
+    width: 24px;
+    height: auto;
+}
+
+.imagenes_habilidades{
+    border: 1px solid black;
+}
+
+.fieldset_habilidades{
+    border-radius: 10px;
+}
+
+.legend_habilidades{
+    padding-left: 3%;
+
+    border: rgb(0, 0, 0) solid 0.5px;
+
+    border-radius: 5px;
+}
+
+#front_end{
+    transition: padding-left 2s ease-out;
+}
+
+#front_end:hover{
+    padding-left:10%;
+}
