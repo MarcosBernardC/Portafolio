@@ -229,22 +229,24 @@ img {
 .lista_habilidades{
     display: flex;
     flex-direction: column;
-}
 
-.lista_habilidades {
     font-size:130%;
 
     border: 2px solid black;
-    display: flex;
     
     padding-left: 1.5%;
     padding-right: 1.5%;
 
     border-radius: 15px;
+
+    padding-bottom: 2%;
 }
+
+
 
 .imagenes_habilidades{
     flex-grow: 1;
+
     border: 1px solid black;
 }
 
@@ -253,6 +255,8 @@ img {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
+
+    
 }
 
 /* Estilo para los iconos de FontAwesome */
@@ -268,9 +272,6 @@ img {
     height: auto;
 }
 
-.imagenes_habilidades{
-    border: 1px solid black;
-}
 
 .fieldset_habilidades{
     border-radius: 10px;
@@ -284,10 +285,193 @@ img {
     border-radius: 5px;
 }
 
+/* Fieldset Frontend */
+.fldset_frontend{
+    transition: border 0.6s ease-in-out;
+}
+.fldset_frontend:hover{
+    border: 2px solid #6C3483;
+}
+
+.fldset_frontend #lgnd_frontend{
+    transition: padding 0.5s ease-in-out, color 0.4s ease-out, background-color 0.4s ease-in;
+}
+.fldset_frontend:hover #lgnd_frontend{
+    padding-left: 20%;
+    padding-right: 20%;
+    background-color: #9B59B6;
+    color: #f3eef5;
+}
+
+.fldset_frontend ul{
+    transition: transform 1s ease, text-align 0s 1s;
+    transform: translateX(0);
+    text-align: left; /* se mantiene para que visualmente el texto se vea alineado a la izquierda */
+}
+.fldset_frontend:hover ul{
+    text-align: right;
+    transform: translateX(13%) scale(1);
+}
+/*********************/
+
+/* Fieldset ctrlversiones */
+.fldset_ctrlversiones{
+    transition: border 0.5s ease-in-out;
+}
+
+.fldset_ctrlversiones:hover{
+    border: 2px solid #34495E;
+}
+
+.fldset_ctrlversiones #lgnd_ctrlversiones{
+    transition: padding 0.6s ease-in-out, color 0.4s ease-in-out;
+}
+.fldset_ctrlversiones:hover #lgnd_ctrlversiones{
+    padding-left: 20%;
+    padding-right: 20%;
+
+    background-color: #727272;
+
+    color: #ffffff;
+}
+
+.fldset_ctrlversiones ul{
+    transition: transform 1s ease, text-align 0s 1s;
+    transform: translateX(0);
+    text-align: left; /* se mantiene para que visualmente el texto se vea alineado a la izquierda */
+}
+.fldset_ctrlversiones:hover ul{
+    text-align: right;
+    transform: translateX(13%) scale(1);
+}
+/**************************/
+
+
+
+/* Fieldset Electrónica */
+.fldset_electronics{
+    transition: border 0.5s ease-in-out;
+}
+.fldset_electronics:hover{
+    border: 2px solid #10A37E;
+}
+
+.fldset_electronics #lgnd_electronics{
+    transition: padding 0.6s ease-in-out, color 0.4s ease-in-out;
+}
+.fldset_electronics:hover #lgnd_electronics{
+    padding-left: 20%;
+    padding-right: 20%;
+    background-color: #10A37E;
+    color: #f4f5f5;
+}
+
+.fldset_electronics ul{
+    transition: transform 1s ease, text-align 0s 1s;
+    transform: translateX(0);
+    text-align: left; /* se mantiene para que visualmente el texto se vea alineado a la izquierda */
+}
+
+.fldset_electronics:hover ul{
+    text-align: right;
+    transform: translateX(13%) scale(1);
+}
+/************************/
+
+/* Fieldset Lenguajes de Programación */
+.fldset_lengProgamacion{
+    transition: border 0.5s ease-in-out;
+}
+
+.fldset_lengProgamacion:hover{
+    border: 2px solid #1C4A6B;
+}
+
+.fldset_lengProgamacion #lgnd_lengProgamacion{
+    transition: padding 0.5s ease-in-out, color 0.4s ease-in-out;
+}
+
+.fldset_lengProgamacion:hover #lgnd_lengProgamacion{
+    padding-left: 20%;
+    padding-right: 20%;
+    background-color: #306998;
+    color: #edf1fa;
+}
+
+.fldset_lengProgamacion ul{
+    transition: transform 1s ease, text-align 0s 1s;
+    transform: translateX(0);
+    text-align: left; /* se mantiene para que visualmente el texto se vea alineado a la izquierda */
+}
+
+.fldset_lengProgamacion:hover ul{
+    text-align: right;
+    transform: translateX(13%) scale(1);
+}
+/**************************************/
+
+/* Fieldset Herramientas de desarrollo */
+.fldset_developertools{
+    transition: border 0.5s ease-in-out;
+}
+.fldset_developertools:hover{
+    border: 2px solid #D35400;
+    
+}
+
+.fldset_developertools #lgnd_developertools{
+    transition: padding 0.5s ease-in-out, color 0.4s ease-in-out;
+}
+.fldset_developertools:hover #lgnd_developertools{
+    padding-left: 20%;
+    padding-right: 20%;
+    background-color: #E67E22;
+    color: white;
+}
+
+.fldset_developertools ul{
+    transition: transform 1s ease, text-align 0s 1s;
+    transform: translateX(0);
+    text-align: left; /* se mantiene para que visualmente el texto se vea alineado a la izquierda */
+}
+.fldset_developertools:hover ul{
+    text-align: right;
+    transform: translateX(13%) scale(1);
+}
+/**************************************/
+
+
+
+
+
 #front_end{
     transition: padding-left 2s ease-out;
 }
 
 #front_end:hover{
     padding-left:10%;
+}
+
+.fa-html5{
+    color: #E34F26;
+}
+.fa-git-alt{
+    color: #F05032;
+}
+.fa-github{
+    color: #181717;
+}
+.fa-css3-alt{
+    color: #1572B6;
+}
+.fa-js{
+    color: #F7DF1E;
+    background-color: #000; /* Para contraste */
+}
+#claude_icon{
+    background-color: black;
+}
+#GPT_icon{
+    background-color: #10a37e8c;
+    border: 2px solid black;
 }
