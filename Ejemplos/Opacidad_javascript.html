@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Opacidad</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        /* Div que cambiará de opacidad */
+        #cambiarOpacidad {
+            width: 200px;
+            height: 200px;
+            background-color: #3498db;
+            opacity: 0; /* Empezará invisible */
+            transition: opacity 0.5s ease; /* Transición de opacidad */
+        }
+
+        /* Div que activará el cambio de opacidad */
+        #activador {
+            width: 150px;
+            height: 150px;
+            background-color: #2ecc71;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- El div que cambiará de opacidad -->
+    <div id="cambiarOpacidad"></div>
+
+    <!-- El div que activará el efecto -->
+    <div id="activador">Pasa el ratón</div>
+
+    <script>
+        // Seleccionar los elementos
+        const activador = document.querySelector('#activador');
+        const cambiarOpacidad = document.querySelector('#cambiarOpacidad');
+
+        // Añadir el evento mouseenter para mostrar el div con transición
+        activador.addEventListener('mouseenter', () => {
+            cambiarOpacidad.style.opacity = 1; // Hacerlo visible
+        });
+
+        // Añadir el evento mouseleave para ocultar el div con transición
+        activador.addEventListener('mouseleave', () => {
+            cambiarOpacidad.style.opacity = 0; // Hacerlo invisible
+        });
+    </script>
+
+</body>
+</html>
