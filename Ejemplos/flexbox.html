@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grillado Flexbox</title>
+  <style>
+    .flex-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 20px;
+      justify-content: center; /* para centrar horizontalmente */
+    }
+
+    .flex-item {
+      background-color: #2196f3;
+      color: white;
+      padding: 40px;
+      text-align: center;
+      border-radius: 10px;
+      flex: 1 1 calc(33.333% - 40px); /* 3 columnas, con espacio para el gap */
+      box-sizing: border-box;
+      min-width: 250px; /* para responsividad */
+    }
+
+    @media (max-width: 768px) {
+      .flex-item {
+        flex: 1 1 calc(50% - 40px); /* 2 columnas en pantallas medianas */
+      }
+    }
+
+    @media (max-width: 480px) {
+      .flex-item {
+        flex: 1 1 100%; /* 1 columna en pantallas chicas */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="flex-container">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+    <div class="flex-item">4</div>
+    <div class="flex-item">5</div>
+    <div class="flex-item">6</div>
+  </div>
+</body>
+</html>
