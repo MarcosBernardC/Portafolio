@@ -1,8 +1,15 @@
 /*Estilos generales*/
 body{
     font-family: sans-serif;
+
+    background: white;
+    transition: background 1.2s ease-in-out;
 }
 /*******************/
+
+#cont_hab{
+    transition: opacity 1s ease-in-out;
+}
 
 /*menú de navegacion*/
 .menu_principal{
@@ -220,13 +227,15 @@ img {
 
 .contenedor_habilidades{
     display: flex;
+    flex-direction: row;
     padding-top: 2%;
     padding-left: 12%;
 
-    border: 1px solid black;
+    border: 1px solid pink;
 }
 
 .lista_habilidades{
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
 
@@ -241,15 +250,26 @@ img {
 
     padding-bottom: 2%;
 
-    flex-grow: 1;
+    
 }
 
+#imagenes_habilidades{
+    flex-grow: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    border: 3px solid blue;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease-in-out;
 
+    pointer-events: none;
+}
 
-.imagenes_habilidades{
-    flex-grow: 1;
+#imagenes_habilidade
 
-    border: 1px solid black;
+#imagenes_habilidades img{
+    width: 500px;
 }
 
 /* Estilo para los elementos de lista */
@@ -257,8 +277,6 @@ img {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
-
-    
 }
 
 /* Estilo para los iconos de FontAwesome */
@@ -480,56 +498,5 @@ img {
 
 
 /* Imágenes Habilidades */
-.imagenes_habilidades img{
-    width: 600px;
-    height: auto;
-}
 
-.imagenes_habilidades{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex-grow: 10;
-}
-
-.Img_hab_frontend{
-    position:absolute;
-    display:none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.Img_hab_ctrlversiones{
-    position:absolute;
-    display:none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.Img_hab_electronica{
-    position:absolute;
-    display:none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-}
-
-.Img_hab_lengProgamacion{
-    position:absolute;
-    display:none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.Img_hab_desarrolloWeb{
-    position:absolute;
-    display:none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+/****************************/

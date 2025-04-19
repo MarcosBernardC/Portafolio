@@ -35,12 +35,12 @@
         </nav>
 
         
-        <div class="contenedor_habilidades">
+        <div class="contenedor_habilidades" id="cont_hab">
             <div class="lista_habilidades">
                 <h1>Habilidades</h1>
                 <p>Estas son las tecnologías y herramientas con las que trabajo:</p>
                 
-                <fieldset class="fieldset_habilidades fldset_frontend">
+                <fieldset class="fieldset_habilidades fldset_frontend" id="fldst_frontend">
                     <legend class="legend_habilidades" id="lgnd_frontend">Front-end</legend>
                     <ul>
                         <li>HTML<i class="fa-brands fa-html5"></i></li>
@@ -50,7 +50,7 @@
                 </fieldset>
                 <br>
 
-                <fieldset class="fieldset_habilidades fldset_ctrlversiones">
+                <fieldset class="fieldset_habilidades fldset_ctrlversiones" id="fldst_ctrver">
                     <legend class="legend_habilidades" id="lgnd_ctrlversiones">Control de Versiones</legend>
                     <ul>
                         <li>Git<i class="fa-brands fa-git-alt"></i></li>
@@ -84,51 +84,80 @@
                     </ul>
                 </fieldset>
             </div>
-            <div class="imagenes_habilidades">
-                <div class="Img_hab_frontend">
-                    <img src="#" alt="frontend_1">
-                    <img src="#" alt="frontend_2">
+            <div id="imagenes_habilidades">
+                <div>
+                    <div class="image-container">
+                        <div class="image-wrapper">
+                            <img src="#" alt="imagen_1" id="imgHab1">
+                            <div class="fade-overlay">
+                                <div class="fade-top"></div>
+                                <div class="fade-bottom"></div>
+                                <div class="fade-left"></div>
+                                <div class="fade-right"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="Img_hab_ctrlversiones">
-                    <img src="#" alt="ControlVersiones_1">
-                    <img src="#" alt="ControlVersiones_2">
+                <div>
+                    <div class="image-container">
+                        <div class="image-wrapper">
+                            <img src="#" alt="imagen_2" id="imgHab2">
+                            <div class="fade-overlay">
+                                <div class="fade-top"></div>
+                                <div class="fade-bottom"></div>
+                                <div class="fade-left"></div>
+                                <div class="fade-right"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="Img_hab_electronica">
-                    <img src="#" alt="Electronics_1">
-                    <img src="#" alt="Electronics_2">
-                </div>
-                <div class="Img_hab_lengProgamacion">
-                    <img src="#" alt="lengProgramacion_1">
-                    <img src="#" alt="lengProgramacion_2">
-                </div>
-                <div class="Img_hab_desarrolloWeb">
-                    <img src="#" alt="DesarrolloWeb_1">
-                    <img src="#" alt="DesarrolloWeb_2">
-                </div>
+                
             </div>
         </div>
         <script>
-            const secciones = [
-                { fieldset: '.fldset_frontend', imagenes: '.Img_hab_frontend' },
-                { fieldset: '.fldset_ctrlversiones', imagenes: '.Img_hab_ctrlversiones' },
-                { fieldset: '.fldset_electronics', imagenes: '.Img_hab_electronica' },
-                { fieldset: '.fldset_lengProgamacion', imagenes: '.Img_hab_lengProgamacion' },
-                { fieldset: '.fldset_developertools', imagenes: '.Img_hab_desarrolloWeb' }
-            ];
+            const fld1= document.getElementById('fldst_frontend');
+            const fld2= document.getElementById('fldst_ctrver');
 
-            secciones.forEach(({ fieldset, imagenes }) => {
-                const contenedor = document.querySelector(fieldset);
-                const imagen = document.querySelector(imagenes);
+            const imgs= document.getElementById('imagenes_habilidades');
+            const img1= document.getElementById('imgHab1');
+            const img2= document.getElementById('imgHab2');
 
-                contenedor.addEventListener('mouseenter', () => {
-                    imagen.style.display = 'flex';
-                });
-
-                contenedor.addEventListener('mouseleave', () => {
-                    imagen.style.display = 'none';
-                });
+        
+            fld1.addEventListener('mouseover', ()=>{
+                mostrarImagen("https://i.postimg.cc/nLkgBBMH/frontend3.jpg", "");
             });
 
+            fld1.addEventListener('mouseout', ()=>{
+                ocultarImagen();
+            })
+
+            fld2.addEventListener('mouseover', ()=>{
+                mostrarImagen("https://i.postimg.cc/kMz16qqY/gitlab.jpg","https://i.postimg.cc/jSQZFfNB/git.jpg");
+            });
+
+            fld2.addEventListener('mouseout', ()=>{
+                ocultarImagen();
+            })
+
+
+            let timeoutId = null;
+
+            function mostrarImagen(src1, src2){
+                
+                if(src2==""){
+                    img2.style.display='none';
+                }
+                else{
+                    img2.style.display='initial';
+                }
+                img1.src=src1;
+                img2.src=src2;
+                imgs.style.opacity=1;
+            }
+
+            function ocultarImagen(){
+                imgs.style.opacity = 0;
+            }
         </script>
     </body>
 

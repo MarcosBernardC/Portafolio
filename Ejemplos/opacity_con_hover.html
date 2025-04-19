@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Hover con Clases y Opacidad</title>
+  <style>
+    .miCaja {
+      width: 200px;
+      height: 100px;
+      background-color: lightgray;
+      opacity: 1;
+      transition: opacity 0.5s ease;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <fieldset class="hover-trigger">
+    Haz hover aquí
+  </fieldset>
+
+  <div class="miCaja">Caja 1</div>
+  <div class="miCaja">Caja 2</div>
+
+  <script>
+    const trigger = document.querySelector('.hover-trigger');
+    const cajas = document.querySelectorAll('.miCaja');
+
+    trigger.addEventListener('mouseenter', () => {
+      cajas.forEach(caja => {
+        caja.style.opacity = '0';
+      });
+    });
+
+    trigger.addEventListener('mouseleave', () => {
+      cajas.forEach(caja => {
+        caja.style.opacity = '1';
+      });
+    });
+  </script>
+
+</body>
+</html>

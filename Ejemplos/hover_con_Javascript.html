@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Hover con JavaScript</title>
+        <style>
+            #miDiv {
+            width: 200px;
+            height: 100px;
+            background-color: lightgray;
+            transition: border 0.3s;
+            margin-top: 20px;
+            }
+        </style>
+    </head>
+    <body>
+
+    <fieldset id="miFieldset">
+        Pasa el mouse por aquí
+    </fieldset>
+
+    <div id="miDiv">
+        Soy el div que cambia
+    </div>
+
+    <script>
+        const fieldset = document.getElementById('miFieldset');
+        const div = document.getElementById('miDiv');
+
+        fieldset.addEventListener('mouseenter', () => {
+        div.style.border = '3px solid blue';
+        });
+
+        fieldset.addEventListener('mouseleave', () => {
+        div.style.border = 'none';
+        });
+    </script>
+
+    </body>
+</html>
