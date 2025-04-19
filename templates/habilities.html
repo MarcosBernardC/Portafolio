@@ -58,7 +58,7 @@
                     </ul>
                 </fieldset>
                 <br>
-                <fieldset class="fieldset_habilidades fldset_electronics">
+                <fieldset class="fieldset_habilidades fldset_electronics" id="fldset_elctrncs">
                     <legend class="legend_habilidades" id="lgnd_electronics">Electrónica</legend>
                     <ul>
                         <li>MPLAB X<img src="https://i.postimg.cc/ZKk6f0K0/mplabx-icon.webp" class="icon"></li>
@@ -67,7 +67,7 @@
                 </fieldset>
 
                 <br>
-                <fieldset class="fieldset_habilidades fldset_lengProgamacion">
+                <fieldset class="fieldset_habilidades fldset_lengProgamacion" id="fldst_lprog">
                     <legend class="legend_habilidades" id="lgnd_lengProgamacion">Lenguajes de Programación</legend>
                     <ul>
                         <li>Python<img src="https://i.postimg.cc/1zf0t30Q/python-1.webp" class="icon"></li>
@@ -75,7 +75,7 @@
                     </ul>
                 </fieldset>
                 <br>
-                <fieldset class="fieldset_habilidades fldset_developertools">
+                <fieldset class="fieldset_habilidades fldset_developertools" id="fldset_dvlptools">
                     <legend class="legend_habilidades" id="lgnd_developertools">Herramientas de Desarrollo</legend>
                     <ul>
                         <li>VS Code<img src="https://i.postimg.cc/x8thQdyz/vscode.png" class="icon" id="VSCode_icon"></li>
@@ -117,6 +117,9 @@
         <script>
             const fld1= document.getElementById('fldst_frontend');
             const fld2= document.getElementById('fldst_ctrver');
+            const fld3= document.getElementById('fldset_elctrncs');
+            const fld4= document.getElementById('fldst_lprog');
+            const fld5= document.getElementById('fldset_dvlptools');
 
             const imgs= document.getElementById('imagenes_habilidades');
             const img1= document.getElementById('imgHab1');
@@ -124,41 +127,68 @@
 
         
             fld1.addEventListener('mouseover', ()=>{
-                mostrarImagen("https://i.postimg.cc/nLkgBBMH/frontend3.jpg", "");
-            });
+                img1.src="https://i.postimg.cc/L6G9xXKK/frontend7.jpg";
+                img1.style.width='700px';
+                img2.style.display='none';
+                imgs.style.opacity=1;
+            })
 
             fld1.addEventListener('mouseout', ()=>{
-                ocultarImagen();
+                imgs.style.opacity=0;
             })
 
             fld2.addEventListener('mouseover', ()=>{
-                mostrarImagen("https://i.postimg.cc/kMz16qqY/gitlab.jpg","https://i.postimg.cc/jSQZFfNB/git.jpg");
-            });
-
-            fld2.addEventListener('mouseout', ()=>{
-                ocultarImagen();
+                img2.style.display='inline';
+                img1.src="https://i.postimg.cc/kMz16qqY/gitlab.jpg";
+                img2.src="https://i.postimg.cc/jSQZFfNB/git.jpg"
+                img1.style.width='400px';
+                imgs.style.opacity=1;
             })
 
+            fld2.addEventListener('mouseout', ()=>{
+                imgs.style.opacity=0;
+            })
 
-            let timeoutId = null;
-
-            function mostrarImagen(src1, src2){
-                
-                if(src2==""){
-                    img2.style.display='none';
-                }
-                else{
-                    img2.style.display='initial';
-                }
-                img1.src=src1;
-                img2.src=src2;
+            fld3.addEventListener('mouseover', ()=>{
+                img2.style.display='inline';
+                img1.style.display='relative';
+                img1.src="https://i.postimg.cc/fRsj4xWC/electronics10.jpg";
+                img2.src="https://i.postimg.cc/mDzgpH7y/electronics1.jpg"
+                img1.style.width='550px';
                 imgs.style.opacity=1;
-            }
+            })
 
-            function ocultarImagen(){
-                imgs.style.opacity = 0;
-            }
+            fld3.addEventListener('mouseout', ()=>{
+                imgs.style.opacity=0;
+            })
+
+            fld4.addEventListener('mouseover', ()=>{
+                img2.style.display='inline';
+                img1.style.display='relative';
+                img1.src="https://i.postimg.cc/50zVXc2c/lprog2.jpg";
+                img2.src="https://i.postimg.cc/FH9MPpV6/lprog5.jpg"
+                img1.style.width='600px';
+                img2.style.width='600px';
+                imgs.style.opacity=1;
+            })
+
+            fld4.addEventListener('mouseout', ()=>{
+                imgs.style.opacity=0;
+            })
+
+            fld5.addEventListener('mouseover', ()=>{
+                img1.style.display='relative';
+                img2.style.display='relative';
+                img1.src="https://i.postimg.cc/x81jVQKw/lprog3.jpg";
+                img2.src="https://i.postimg.cc/ZRhFc7rB/dvlp-Tools-1.jpg"
+                img1.style.width='650px';
+                img2.style.width='600px';
+                imgs.style.opacity=1;
+            })
+
+            fld5.addEventListener('mouseout', ()=>{
+                imgs.style.opacity=0;
+            })
         </script>
     </body>
-
 </html>
