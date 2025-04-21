@@ -504,3 +504,77 @@ img {
 
 /****************************/
 
+.contenedor_aboutme{
+    display: flex;
+    border: 1px solid purple;
+
+    height: 960px;
+    padding-top: 2%;
+    padding-left: 12%;
+}
+
+.left_aboutme{
+    flex-grow: 1;
+
+    border: 1px solid black;
+}
+
+.middle_aboutme{
+    flex-grow: 2;
+
+    display: flex;
+    flex-direction: column;
+
+    font-size:130%;
+
+    border: 2px solid black;
+    
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+
+    border-radius: 15px;
+
+    padding-top: 2%;
+    padding-bottom: 2%;
+
+    max-width: 50%;
+}
+
+.titulo_aboutme{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.resumen_aboutme{
+    padding-left:3%;
+    padding-right:3%;
+
+    font-size: 19px;
+}
+
+.subtitulo_aboutme{
+    padding-left: 24px;
+}
+
+.subparrafo_aboutme{
+    font-size: 18px;
+    padding-left: 7%;
+    padding-right: 5%;
+
+    
+
+    padding-bottom: 1px;
+}
+
+.h4_aboutme{
+    padding-left: 50px;
+
+    
+}
+
+.right_aboutme{
+    flex-grow: 1;
+
+    border: 1px solid black;
+}
