@@ -63,7 +63,7 @@ body{
     transition: background-color 0.2s ease-out;
 }
 .contenedor_general{
-    display: flexbox;
+    display: flex;
     
     align-items: center;
     padding-left: 11%;
@@ -571,6 +571,10 @@ img {
     padding-left: 50px;
 
     
+}
+
+.h3_aboutme{
+    padding-left: 70px;
 }
 
 .right_aboutme{
