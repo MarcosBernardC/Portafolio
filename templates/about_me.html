@@ -97,8 +97,42 @@
                     </ul>
                 </div>
 
+
             </div>
-            <div class="right_aboutme">Estoy en la derecha!</div>
+            <div class="right_aboutme">
+                <div class="title_projects_aboutme">
+                    Selecciona un proyecto!
+                </div>
+                <div class="Proyects_aboutme">
+
+                    <div class="Proy_AboutMe" id="PaboutMe_1">
+                        <div id="titulo_proy_aboutme_1"><p>Control PWM mediante Señal Analógica</p></div>
+                        <div class="contenido_proy_aboutme" id="cpa_me_1">
+                            
+                        </div>
+                        <div style="display:flex; justify-content: center;"><button>Ver más!</button></div>
+                    </div>
+
+                    
+
+                </div>
+            </div>
         </div>
+
+        <script>
+            const PaboutMe_1=document.getElementById("PaboutMe_1"); // Contenedor general del proyecto
+            const Cont_Paboutme_1=document.getElementById("cpa_me_1"); //Contenido interno del proyecto
+            const title_Paboutme_1=document.getElementById("titulo_proy_aboutme_1");
+
+            PaboutMe_1.addEventListener('mouseover', ()=>{
+                Cont_Paboutme_1.style.opacity=1;
+                Cont_Paboutme_1.textContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+            })
+
+            PaboutMe_1.addEventListener('mouseout', ()=>{
+                Cont_Paboutme_1.style.opacity=0;
+                Cont_Paboutme_1.textContent = "";
+            })
+        </script>
     </body>
 </html>
